@@ -10,8 +10,8 @@
             --bg-color: #F9F6F0;       /* Alabastro / Nude muy claro */
             --card-bg: #FFFFFF;        /* Blanco puro para contraste */
             --primary: #D4C5B9;        /* Nude medio / Beige */
-            --accent: #B8A495;         /* Taupe / Nude oscuro para botones */
-            --text-main: #4A443F;      /* Café oscuro (suave, no negro rígido) */
+            --accent: #B8A495;         /* Taupe / Nude oscuro para detalles */
+            --text-main: #4A443F;      /* Café oscuro suave */
             --text-muted: #8A7F75;     /* Gris café para subtítulos */
         }
 
@@ -30,7 +30,7 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 40px auto;
             background: var(--card-bg);
             padding: 40px;
@@ -40,34 +40,28 @@
 
         /* Encabezado */
         header {
-            text-align: center;
-            margin-bottom: 40px;
-            border-bottom: 2px solid var(--bg-color);
-            padding-bottom: 30px;
+            text-align: left;
+            margin-bottom: 30px;
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 3.5rem;
+            line-height: 1.1;
+            font-weight: 800;
             color: var(--text-main);
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-
-        header p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-top: 5px;
+            margin-bottom: 20px;
+            font-family: 'Arial Black', Gadget, sans-serif;
         }
 
         /* Secciones */
         section {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         h2 {
             font-size: 1.4rem;
             color: var(--text-main);
-            margin-bottom: 15px;
+            margin-bottom: 25px;
             border-left: 4px solid var(--accent);
             padding-left: 10px;
             text-transform: uppercase;
@@ -75,24 +69,47 @@
         }
 
         p {
-            margin-bottom: 15px;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            line-height: 1.7;
+            text-align: justify;
         }
 
         /* Etiquetas de habilidades */
-        .skills-container {
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .skills-card {
+            background: var(--bg-color);
+            border: 1px solid var(--primary);
+            padding: 15px;
+            border-radius: 12px;
+        }
+
+        .skills-card strong {
+            color: var(--text-main);
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .skills-badge-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
+            gap: 6px;
         }
 
         .skill-badge {
-            background-color: var(--bg-color);
+            background-color: var(--card-bg);
             color: var(--text-main);
-            padding: 6px 14px;
+            padding: 5px 12px;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
             border: 1px solid var(--primary);
         }
@@ -101,7 +118,7 @@
         .project-card {
             background: var(--bg-color);
             border: 1px solid var(--primary);
-            padding: 20px;
+            padding: 25px;
             border-radius: 12px;
             margin-bottom: 20px;
             transition: transform 0.2s;
@@ -113,11 +130,44 @@
 
         .project-card h3 {
             color: var(--text-main);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
-        /* Botones estilo Nude */
-        .btn {
+        /* Botones interactivos */
+        .btn-primary {
+            display: inline-block;
+            background-color: #0e83b0;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0b688c;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background-color: transparent;
+            color: black;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            border: 1px solid black;
+            transition: background 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-project {
             display: inline-block;
             background-color: var(--accent);
             color: white;
@@ -125,11 +175,11 @@
             border-radius: 8px;
             text-decoration: none;
             font-size: 0.9rem;
-            margin-top: 10px;
+            margin-top: 15px;
             transition: background 0.2s;
         }
 
-        .btn:hover {
+        .btn-project:hover {
             background-color: var(--text-main);
         }
 
@@ -155,76 +205,159 @@
         /* Responsive */
         @media (max-width: 600px) {
             .container { padding: 20px; margin: 10px auto; }
-            header h1 { font-size: 2rem; }
+            header h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Encabezado -->
+        <!-- Encabezado Estilo Banner -->
         <header>
-            <h1>Catalina Lee-Chong Ramírez</h1>
-            <p>Ingeniera en Informática</p>
+            <p style="color: var(--accent); font-size: 0.85rem; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px;">
+                > Aprendizaje Continuo
+            </p>
+            <h1>
+                Catalina<br>Lee-Chong.
+            </h1>
+            <p style="font-size: 1.4rem; font-weight: 600; color: #000000; margin-bottom: 30px; letter-spacing: -0.5px;">
+                Ingeniera Informática · Data Analyst · Backend
+            </p>
         </header>
 
         <!-- Sobre Mí -->
-        <section>
-            <h2>Sobre Mí</h2>
-            <p>Soy una profesional responsable, atenta y orientada a la resolución de problemas. Me apasiona la tecnología y cómo esta puede optimizar procesos reales para mejorar la vida de las personas.</p>
-            <p>Mi enfoque combina capacidades técnicas con un fuerte sentido del trabajo en equipo, adaptabilidad y una excelente comunicación orientada al servicio del usuario.</p>
-        </section>
+        <section id="sobre-mi">
+            <p style="margin-bottom: 35px;">
+                Ingeniera Informática con mención en Ciencia de Datos, especializada en análisis de datos y Business Intelligence. 
+                Me enfoco en la transformación, análisis y visualización de datos mediante SQL, Python, Power BI y procesos ETL, 
+                generando información que apoye la toma de decisiones y la mejora continua de los procesos. 
+                Cuento con experiencia en entornos digitales corporativos de alta exigencia, complementada con habilidades 
+                interpersonales clave como la comunicación asertiva, el trabajo bajo presión y un enfoque resolutivo orientado al usuario.
+            </p>
 
-        <!-- Habilidades -->
-        <section>
-            <h2>Habilidades</h2>
-            <div class="skills-container">
-                <span class="skill-badge">Gestión de Servicios TI</span>
-                <span class="skill-badge">Soporte Técnico</span>
-                <span class="skill-badge">Bases de Datos</span>
-                <span class="skill-badge">Git & GitHub</span>
-                <span class="skill-badge">Comunicación Asertiva</span>
-                <span class="skill-badge">Trabajo bajo Presión</span>
-                <span class="skill-badge">Resolución de Problemas</span>
+            <!-- Botones de Acción -->
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <a href="#proyectos" class="btn-primary">Ver proyectos &rarr;</a>
+                <a href="#contacto" class="btn-secondary">Contáctame</a>
             </div>
         </section>
 
-        <!-- Experiencia -->
-        <section>
-            <h2>Trayectoria</h2>
-            <div style="margin-bottom: 20px;">
-                <strong style="color: var(--text-main);">Práctica Profesional | Gerencia de Servicios Digitales</strong><br>
-                <small style="color: var(--text-muted);">Aguas Andinas</small>
-                <p style="margin-top: 5px; font-size: 0.95rem;">Apoyo en la gestión de flujos digitales, resolución de incidencias y aprendizaje continuo en entornos de alta exigencia corporativa.</p>
+        <!-- Herramientas y Tecnologías -->
+        <section id="habilidades">
+            <h2>Habilidades & Tecnologías</h2>
+            <div class="skills-grid">
+                
+                <!-- Backend & APIs -->
+                <div class="skills-card">
+                    <strong>⚙️ Backend & APIs</strong>
+                    <div class="skills-badge-container">
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">Node.js</span>
+                        <span class="skill-badge">FastAPI</span>
+                        <span class="skill-badge">REST</span>
+                    </div>
+                </div>
+
+                <!-- Bases de Datos -->
+                <div class="skills-card">
+                    <strong>🗄️ Bases de Datos</strong>
+                    <div class="skills-badge-container">
+                        <span class="skill-badge">PostgreSQL</span>
+                        <span class="skill-badge">MySQL</span>
+                    </div>
+                </div>
+
+                <!-- BI & Analytics -->
+                <div class="skills-card">
+                    <strong>📊 BI & Analytics</strong>
+                    <div class="skills-badge-container">
+                        <span class="skill-badge">Power BI</span>
+                        <span class="skill-badge">Power Query</span>
+                        <span class="skill-badge">ETL</span>
+                        <span class="skill-badge">Data Modeling</span>
+                    </div>
+                </div>
+
+                <!-- DevOps & Cloud -->
+                <div class="skills-card">
+                    <strong>🚀 DevOps & Cloud</strong>
+                    <div class="skills-badge-container">
+                        <span class="skill-badge">GitHub Actions</span>
+                        <span class="skill-badge">AWS - básico</span>
+                        <span class="skill-badge">Nginx</span>
+                    </div>
+                </div>
+
+                <!-- Frontend -->
+                <div class="skills-card">
+                    <strong>🌐 Frontend</strong>
+                    <div class="skills-badge-container">
+                        <span class="skill-badge">React</span>
+                        <span class="skill-badge">TypeScript</span>
+                        <span class="skill-badge">HTML/CSS</span>
+                        <span class="skill-badge">Tailwind</span>
+                    </div>
+                </div>
+
+                <!-- Herramientas -->
+                <div class="skills-card">
+                    <strong>🧰 Herramientas</strong>
+                    <div class="skills-badge-container">
+                        <span class="skill-badge">Git</span>
+                        <span class="skill-badge">Figma</span>
+                        <span class="skill-badge">Postman</span>
+                        <span class="skill-badge">Jira</span>
+                        <span class="skill-badge">VS Code</span>
+                    </div>
+                </div>
+
             </div>
-            <div>
-                <strong style="color: var(--text-main);">Atención al Cliente y Servicios</strong><br>
-                <small style="color: var(--text-muted);">Experiencia en Sector Gastronómico (Tao Maipú)</small>
-                <p style="margin-top: 5px; font-size: 0.95rem;">Desarrollo de habilidades interpersonales clave: manejo de clientes, comunicación rápida, empatía y organización eficiente del tiempo bajo presión.</p>
+        </section>
+
+        <!-- Trayectoria Profesional -->
+        <section id="trayectoria">
+            <h2>Trayectoria Profesional</h2>
+            <div style="background: var(--card-bg); border: 1px solid var(--primary); padding: 25px; border-radius: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 15px;">
+                    <div>
+                        <h3 style="color: var(--text-main); font-size: 1.2rem; font-weight: 700;">
+                            Práctica Profesional · Gerencia de Servicios Digitales
+                        </h3>
+                        <p style="color: var(--accent); font-weight: 600; margin-bottom: 0; font-size: 1rem;">
+                            Aguas Andinas
+                        </p>
+                    </div>
+                    <span style="background-color: var(--bg-color); color: var(--text-muted); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; border: 1px solid var(--primary);">
+                        Santiago, Chile
+                    </span>
+                </div>
+
+                <ul style="margin-left: 20px; color: var(--text-main); font-size: 1.05rem; line-height: 1.7;">
+                    <li style="margin-bottom: 8px;">Apoyo en la gestión, monitoreo y optimización de flujos de servicios digitales y procesos tecnológicos de la compañía.</li>
+                    <li style="margin-bottom: 8px;">Análisis de datos operativos e incidencias técnicas, contribuyendo a la generación de información estratégica para la mejora continua del área.</li>
+                    <li style="margin-bottom: 8px;">Resolución de requerimientos técnicos en un entorno corporativo de alta exigencia, aplicando metodologías ágiles y herramientas de gestión interna.</li>
+                    <li style="margin-bottom: 0;">Colaboración directa con equipos multidisciplinarios, fortaleciendo una comunicación técnica asertiva y un enfoque orientado a la continuidad del servicio.</li>
+                </ul>
             </div>
         </section>
 
         <!-- Proyectos -->
-        <section>
+        <section id="proyectos">
             <h2>Proyectos Destacados</h2>
-            
-            <!-- Proyecto 1 -->
             <div class="project-card">
-                <h3>Mi Primer Proyecto</h3>
-                <p>Aquí puedes escribir una descripción breve de lo que hace tu proyecto de GitHub (por ejemplo, una aplicación, un script de automatización o una base de datos).</p>
-                <a href="#" class="btn">Ver en GitHub</a>
+                <h3>Dashboard de Business Intelligence / API Backend</h3>
+                <p>Espacio reservado para describir tu primer gran proyecto en GitHub. Aquí explicaremos cómo aplicas ETL, Python o tus conexiones a bases de datos PostgreSQL/MySQL para resolver un problema real.</p>
+                <a href="https://github.com/Lee-Chong" target="_blank" class="btn-project">Ver en GitHub</a>
             </div>
-
-            <!-- Puedes duplicar el bloque de arriba para agregar más proyectos -->
         </section>
 
         <!-- Contacto -->
-        <section style="text-align: center; border-top: 2px solid var(--bg-color); padding-top: 30px; margin-bottom: 0;">
+        <section id="contacto" style="text-align: center; border-top: 2px solid var(--bg-color); padding-top: 30px; margin-bottom: 0;">
             <h2>Contacto</h2>
             <p>¿Quieres que colaboremos o conocer más de mi perfil? ¡Conectemos!</p>
             <div class="contact-links">
                 <a href="https://github.com/Lee-Chong" target="_blank">GitHub</a> • 
-                <a href="#" target="_blank">LinkedIn</a> • 
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a> • 
                 <a href="mailto:tu-correo@email.com">Email</a>
             </div>
         </section>
