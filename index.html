@@ -43,6 +43,7 @@
         header {
             text-align: left;
             margin-bottom: 30px;
+            padding-top: 10px;
         }
 
         header h1 {
@@ -59,14 +60,16 @@
             margin-bottom: 50px;
         }
 
+        /* Tipografía elegante para títulos de sección */
         h2 {
-            font-size: 1.4rem;
+            font-family: 'Georgia', 'Garamond', serif;
+            font-style: italic;
+            font-size: 1.6rem;
+            font-weight: normal;
             color: var(--text-main);
             margin-bottom: 25px;
             border-left: 4px solid var(--accent);
-            padding-left: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            padding-left: 12px;
         }
 
         p {
@@ -76,39 +79,58 @@
             text-align: justify;
         }
 
-        /* Etiquetas de habilidades */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
+        /* Diseño de habilidades alargadas de forma horizontal */
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
         .skills-card {
             background: var(--bg-color);
             border: 1px solid var(--primary);
-            padding: 15px;
+            padding: 20px;
             border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Estilo para pantallas medianas/grandes: alinea título a la izquierda y badges a la derecha */
+        @media (min-width: 650px) {
+            .skills-card {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px;
+            }
+            .skills-card strong {
+                min-width: 180px;
+                margin-bottom: 0 !important;
+            }
+            .skills-badge-container {
+                justify-content: flex-end;
+            }
         }
 
         .skills-card strong {
             color: var(--text-main);
-            display: block;
-            margin-bottom: 10px;
             font-size: 0.95rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            font-weight: 700;
         }
 
         .skills-badge-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
+            gap: 8px;
         }
 
         .skill-badge {
             background-color: var(--card-bg);
             color: var(--text-main);
-            padding: 5px 12px;
+            padding: 6px 14px;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 500;
@@ -134,10 +156,10 @@
             margin-bottom: 10px;
         }
 
-        /* Botones interactivos modificados */
+        /* Botones */
         .btn-primary {
             display: inline-block;
-            background-color: var(--mocha-btn); /* Color Moca / Chocolate */
+            background-color: var(--mocha-btn);
             color: white;
             padding: 14px 28px;
             border-radius: 8px;
@@ -148,7 +170,7 @@
         }
 
         .btn-primary:hover {
-            background-color: #4A3E36; /* Un moca más oscuro al pasar el cursor */
+            background-color: #4A3E36;
         }
 
         .btn-secondary {
@@ -214,16 +236,12 @@
 <body>
 
     <div class="container">
-        <!-- Encabezado Estilo Banner -->
+        <!-- Encabezado Estilo Banner (Sin "Aprendizaje Continuo") -->
         <header>
-            <p style="color: var(--accent); font-size: 0.85rem; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px;">
-                > Aprendizaje Continuo
-            </p>
             <h1>
                 Catalina<br>Lee-Chong.
             </h1>
             
-            <!-- Tipografías actualizadas según lo solicitado -->
             <div style="margin-bottom: 30px;">
                 <p style="font-family: 'Georgia', 'Garamond', serif; font-style: italic; font-size: 1.6rem; color: var(--text-main); margin-bottom: 8px; letter-spacing: 0.5px;">
                     Ingeniera Informática
@@ -244,21 +262,20 @@
                 interpersonales clave como la comunicación asertiva, el trabajo bajo presión y un enfoque resolutivo orientado al usuario.
             </p>
 
-            <!-- Botones de Acción en tono Café Moca / Chocolate -->
             <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                 <a href="#proyectos" class="btn-primary">Ver proyectos &rarr;</a>
                 <a href="#contacto" class="btn-secondary">Contáctame</a>
             </div>
         </section>
 
-        <!-- Herramientas y Tecnologías -->
+        <!-- Herramientas y Tecnologías Renovadas -->
         <section id="habilidades">
-            <h2>Habilidades & Tecnologías</h2>
-            <div class="skills-grid">
+            <h2>Habilidades <span style="color: var(--text-main); font-style: normal; font-size: 1.2rem; vertical-align: middle; margin: 0 5px;">★</span> Tecnologías</h2>
+            <div class="skills-container">
                 
                 <!-- Backend & APIs -->
                 <div class="skills-card">
-                    <strong>⚙️ Backend & APIs</strong>
+                    <strong>Backend & APIs</strong>
                     <div class="skills-badge-container">
                         <span class="skill-badge">Python</span>
                         <span class="skill-badge">Node.js</span>
@@ -269,7 +286,7 @@
 
                 <!-- Bases de Datos -->
                 <div class="skills-card">
-                    <strong>🗄️ Bases de Datos</strong>
+                    <strong>Bases de Datos</strong>
                     <div class="skills-badge-container">
                         <span class="skill-badge">PostgreSQL</span>
                         <span class="skill-badge">MySQL</span>
@@ -278,7 +295,7 @@
 
                 <!-- BI & Analytics -->
                 <div class="skills-card">
-                    <strong>📊 BI & Analytics</strong>
+                    <strong>BI & Analytics</strong>
                     <div class="skills-badge-container">
                         <span class="skill-badge">Power BI</span>
                         <span class="skill-badge">Power Query</span>
@@ -289,7 +306,7 @@
 
                 <!-- DevOps & Cloud -->
                 <div class="skills-card">
-                    <strong>🚀 DevOps & Cloud</strong>
+                    <strong>DevOps & Cloud</strong>
                     <div class="skills-badge-container">
                         <span class="skill-badge">GitHub Actions</span>
                         <span class="skill-badge">AWS - básico</span>
@@ -299,7 +316,7 @@
 
                 <!-- Frontend -->
                 <div class="skills-card">
-                    <strong>🌐 Frontend</strong>
+                    <strong>Frontend</strong>
                     <div class="skills-badge-container">
                         <span class="skill-badge">React</span>
                         <span class="skill-badge">TypeScript</span>
@@ -310,7 +327,7 @@
 
                 <!-- Herramientas -->
                 <div class="skills-card">
-                    <strong>🧰 Herramientas</strong>
+                    <strong>Herramientas</strong>
                     <div class="skills-badge-container">
                         <span class="skill-badge">Git</span>
                         <span class="skill-badge">Figma</span>
@@ -355,7 +372,7 @@
             <h2>Proyectos Destacados</h2>
             <div class="project-card">
                 <h3>Dashboard de Business Intelligence / API Backend</h3>
-                <p>Espacio reservado para describir tu primer gran proyecto en GitHub. Aquí explicaremos cómo aplicas ETL, Python o tus conexiones a bases de datos PostgreSQL/MySQL para resolver un problema real.</p>
+                <p>Espacio reservado para describir tu primer gran proyecto en GitHub. Aquí explicaremos cómo aplicas ETL, Python o tus conexiones a bases de datos PostgreSQL/MySQL para resolver un problem real.</p>
                 <a href="https://github.com/Lee-Chong" target="_blank" class="btn-project">Ver en GitHub</a>
             </div>
         </section>
