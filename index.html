@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalina Lee-Chong | Portafolio</title>
     <style>
-        /* Paleta de colores Nude / Minimalista */
+        /* Paleta de colores Nude / Moca / Chocolate */
         :root {
             --bg-color: #F9F6F0;       /* Alabastro / Nude muy claro */
             --card-bg: #FFFFFF;        /* Blanco puro para contraste */
             --primary: #D4C5B9;        /* Nude medio / Beige */
-            --accent: #B8A495;         /* Taupe / Nude oscuro para detalles */
+            --accent: #B8A495;         /* Taupe / Nude oscuro */
+            --mocha-btn: #6F5E53;      /* Café Moca / Chocolate para botones principales */
             --text-main: #4A443F;      /* Café oscuro suave */
             --text-muted: #8A7F75;     /* Gris café para subtítulos */
         }
@@ -133,10 +134,10 @@
             margin-bottom: 10px;
         }
 
-        /* Botones interactivos */
+        /* Botones interactivos modificados */
         .btn-primary {
             display: inline-block;
-            background-color: #0e83b0;
+            background-color: var(--mocha-btn); /* Color Moca / Chocolate */
             color: white;
             padding: 14px 28px;
             border-radius: 8px;
@@ -147,29 +148,29 @@
         }
 
         .btn-primary:hover {
-            background-color: #0b688c;
+            background-color: #4A3E36; /* Un moca más oscuro al pasar el cursor */
         }
 
         .btn-secondary {
             display: inline-block;
             background-color: transparent;
-            color: black;
+            color: var(--mocha-btn);
             padding: 14px 28px;
             border-radius: 8px;
             text-decoration: none;
             font-size: 1rem;
             font-weight: 500;
-            border: 1px solid black;
+            border: 1px solid var(--mocha-btn);
             transition: background 0.2s;
         }
 
         .btn-secondary:hover {
-            background-color: rgba(0, 0, 0, 0.05);
+            background-color: rgba(111, 94, 83, 0.08);
         }
 
         .btn-project {
             display: inline-block;
-            background-color: var(--accent);
+            background-color: var(--mocha-btn);
             color: white;
             padding: 8px 16px;
             border-radius: 8px;
@@ -200,7 +201,7 @@
         }
 
         .contact-links a:hover {
-            color: var(--accent);
+            color: var(--mocha-btn);
         }
 
         /* Responsive */
@@ -221,9 +222,16 @@
             <h1>
                 Catalina<br>Lee-Chong.
             </h1>
-            <p style="font-size: 1.4rem; font-weight: 600; color: #000000; margin-bottom: 30px; letter-spacing: -0.5px;">
-                Ingeniera Informática · Data Analyst · Backend
-            </p>
+            
+            <!-- Tipografías actualizadas según lo solicitado -->
+            <div style="margin-bottom: 30px;">
+                <p style="font-family: 'Georgia', 'Garamond', serif; font-style: italic; font-size: 1.6rem; color: var(--text-main); margin-bottom: 8px; letter-spacing: 0.5px;">
+                    Ingeniera Informática
+                </p>
+                <p style="font-size: 1.15rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.5px; display: flex; align-items: center; gap: 8px;">
+                    Data Analyst <span style="color: var(--accent); font-size: 1rem;">★</span> Backend
+                </p>
+            </div>
         </header>
 
         <!-- Sobre Mí -->
@@ -236,7 +244,7 @@
                 interpersonales clave como la comunicación asertiva, el trabajo bajo presión y un enfoque resolutivo orientado al usuario.
             </p>
 
-            <!-- Botones de Acción -->
+            <!-- Botones de Acción en tono Café Moca / Chocolate -->
             <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                 <a href="#proyectos" class="btn-primary">Ver proyectos &rarr;</a>
                 <a href="#contacto" class="btn-secondary">Contáctame</a>
