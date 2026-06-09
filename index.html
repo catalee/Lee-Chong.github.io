@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalina Lee-Chong | Portafolio</title>
+    <style>
+        /* Paleta de colores Nude / Minimalista */
+        :root {
+            --bg-color: #F9F6F0;       /* Alabastro / Nude muy claro */
+            --card-bg: #FFFFFF;        /* Blanco puro para contraste */
+            --primary: #D4C5B9;        /* Nude medio / Beige */
+            --accent: #B8A495;         /* Taupe / Nude oscuro para botones */
+            --text-main: #4A443F;      /* Café oscuro (suave, no negro rígido) */
+            --text-muted: #8A7F75;     /* Gris café para subtítulos */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(184, 164, 149, 0.15);
+        }
+
+        /* Encabezado */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--text-main);
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        /* Secciones */
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: var(--text-main);
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent);
+            padding-left: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        /* Etiquetas de habilidades */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .skill-badge {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid var(--primary);
+        }
+
+        /* Tarjetas de Proyectos */
+        .project-card {
+            background: var(--bg-color);
+            border: 1px solid var(--primary);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .project-card h3 {
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        /* Botones estilo Nude */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--text-main);
+        }
+
+        /* Enlaces de contacto */
+        .contact-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .contact-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .contact-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 20px; margin: 10px auto; }
+            header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Encabezado -->
+        <header>
+            <h1>Catalina Lee-Chong Ramírez</h1>
+            <p>Ingeniera en Informática</p>
+        </header>
+
+        <!-- Sobre Mí -->
+        <section>
+            <h2>Sobre Mí</h2>
+            <p>Soy una profesional responsable, atenta y orientada a la resolución de problemas. Me apasiona la tecnología y cómo esta puede optimizar procesos reales para mejorar la vida de las personas.</p>
+            <p>Mi enfoque combina capacidades técnicas con un fuerte sentido del trabajo en equipo, adaptabilidad y una excelente comunicación orientada al servicio del usuario.</p>
+        </section>
+
+        <!-- Habilidades -->
+        <section>
+            <h2>Habilidades</h2>
+            <div class="skills-container">
+                <span class="skill-badge">Gestión de Servicios TI</span>
+                <span class="skill-badge">Soporte Técnico</span>
+                <span class="skill-badge">Bases de Datos</span>
+                <span class="skill-badge">Git & GitHub</span>
+                <span class="skill-badge">Comunicación Asertiva</span>
+                <span class="skill-badge">Trabajo bajo Presión</span>
+                <span class="skill-badge">Resolución de Problemas</span>
+            </div>
+        </section>
+
+        <!-- Experiencia -->
+        <section>
+            <h2>Trayectoria</h2>
+            <div style="margin-bottom: 20px;">
+                <strong style="color: var(--text-main);">Práctica Profesional | Gerencia de Servicios Digitales</strong><br>
+                <small style="color: var(--text-muted);">Aguas Andinas</small>
+                <p style="margin-top: 5px; font-size: 0.95rem;">Apoyo en la gestión de flujos digitales, resolución de incidencias y aprendizaje continuo en entornos de alta exigencia corporativa.</p>
+            </div>
+            <div>
+                <strong style="color: var(--text-main);">Atención al Cliente y Servicios</strong><br>
+                <small style="color: var(--text-muted);">Experiencia en Sector Gastronómico (Tao Maipú)</small>
+                <p style="margin-top: 5px; font-size: 0.95rem;">Desarrollo de habilidades interpersonales clave: manejo de clientes, comunicación rápida, empatía y organización eficiente del tiempo bajo presión.</p>
+            </div>
+        </section>
+
+        <!-- Proyectos -->
+        <section>
+            <h2>Proyectos Destacados</h2>
+            
+            <!-- Proyecto 1 -->
+            <div class="project-card">
+                <h3>Mi Primer Proyecto</h3>
+                <p>Aquí puedes escribir una descripción breve de lo que hace tu proyecto de GitHub (por ejemplo, una aplicación, un script de automatización o una base de datos).</p>
+                <a href="#" class="btn">Ver en GitHub</a>
+            </div>
+
+            <!-- Puedes duplicar el bloque de arriba para agregar más proyectos -->
+        </section>
+
+        <!-- Contacto -->
+        <section style="text-align: center; border-top: 2px solid var(--bg-color); padding-top: 30px; margin-bottom: 0;">
+            <h2>Contacto</h2>
+            <p>¿Quieres que colaboremos o conocer más de mi perfil? ¡Conectemos!</p>
+            <div class="contact-links">
+                <a href="https://github.com/Lee-Chong" target="_blank">GitHub</a> • 
+                <a href="#" target="_blank">LinkedIn</a> • 
+                <a href="mailto:tu-correo@email.com">Email</a>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
